@@ -1,0 +1,97 @@
+/*HEADER*/
+
+*{
+    box-sizing: border-box;
+}
+
+.font{
+    font-family: 'Magra', sans-serif;
+}
+
+.welocome{
+    width: 100%;
+    background-color: #48C9B0;
+    display: block;
+    height: 2rem;
+}
+
+.welcome-message{
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    font-size: 16px;  
+    padding: 0.2rem;
+}
+
+.main-header{
+    background-color: #D5F5E3 ;
+}
+
+.logo{
+    width: 5rem;
+}
+
+.search-bar{
+    width: 45vw;
+    display: flex;
+}
+
+.bar{
+    width: 100%;
+    border: solid 1px #48C9B0;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 0.1rem 1rem;
+    margin: 0.1rem;
+}
+
+.icon-search{
+    background-color: white;
+    border: solid 1px #48C9B0;
+    color: #48C9B0;
+    border-radius: 10px;
+    margin: 0.1rem;
+}
+
+.menu-header{
+    width: 25vw;
+    text-align: center;
+}
+
+.contact{
+    display: none;
+}
+
+.contact, .cart, .user, .new-user{
+    color: #EB984E;
+    padding: 0.1rem;
+}
+
+.contact, .cart{
+    width: 2rem;
+}
+
+.user, .new-user{
+    width: 2rem;
+}
+
+.cont-logo-search{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    align-items: center;
+}
+
+.option-list{
+    display: none;
+}
+
+.burger-menu{
+    background-color: #48C9B0;
+    color: white;
+    width: 2.5rem;
+    text-align: center;
+    border-radius: 7px;
+    padding: 5px;
+    margin: 0 45vw;
+}
