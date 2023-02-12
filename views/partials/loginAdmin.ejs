@@ -1,0 +1,36 @@
+<body>
+    <main>
+        <div class='font'>
+            <button class='close-admin' id='close-loginAdmin'><i class="fas fa-times"></i></button>
+            <div class='flex-content'>
+                <a href='/'><img src='/images/web/logosinfondo.png' class='login-logo'></a>
+                <p class='start'>Inicia Sesion</p>  
+            </div>
+            
+            <form action='/login/' method='POST' class='form'>
+                <div class='complete-box'>
+                    <p>Email</p>
+                    <input type='email' name='email' id='email'>
+                </div>
+                <br>
+                <div class='complete-box'>
+                    <p>Contraseña</p>
+                    <input type='password' name='password' id='password'>
+                </div>
+                <a href='#' class='text-decoration'><p class='password-forgot'>¿Olvidaste tu contraseña?</p></a>
+                <div class='remember-box'>
+                    <input type='checkbox' name='remember-user'>
+                    <p class='remember-text'>Recordar mi Usuario</p>
+                </div>
+                <div class='button'>
+                    <button type='submit' class='checkin-buttonAdmin'>INGRESAR</button>
+                </div>
+                <div class='create-box'>
+                    <p>¿Todavia no tenes tu cuenta?</p><a href='/user/register'><p>Registrate!</p></a>
+                </div>   
+            </form>
+
+        </div>
+    </main>
+</body>
+</html>

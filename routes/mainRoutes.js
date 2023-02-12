@@ -5,6 +5,7 @@ const mainController = require('../controllers/mainController');
 
 
 router.get('/', mainController.home);
+router.get('/error', mainController.error);
 
 
 

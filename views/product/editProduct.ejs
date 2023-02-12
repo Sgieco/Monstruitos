@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='stylesheet' href='/css/main/home.css'>
+    <link rel='stylesheet' href='/css/user/login.css'>
+    <link rel='stylesheet' href='/css/admin/loginAdmin.css'>
+    <link rel='stylesheet' href='/css/product/product.css'>
+    <%- include('../partials/head.ejs')%>
+</head>
+<body>
+    <%- include('../partials/header.ejs')%>
+    <dialog id='popup-login' class='style-login'>
+        <%- include('../partials/login.ejs')%>
+    </dialog>
+
+    <main class='edit-main font'>
+        <h2 class='edit-title'>EDITAR PRODUCTO</h2>
+        <form action='/products/editProduct/' method='POST' class='edit-form'>
+            <div class='edit-space'>
+                <input type='text' name='nombre' placeholder='Nombre del Producto'>
+            </div>
+            <div class='edit-space'>
+                <select name='categoria'>
+                    <option disabled selected>Categoria Principal</option>
+                    <option value=''>Todas la opciones</option>
+                </select>
+            </div>
+            <div class='edit-space'>
+                <select name='subcategoria'>
+                    <option disabled selected>Categoria Secundaria</option>
+                    <option value=''>Todas la opciones</option>
+                </select>
+            </div>
+            <div class='edit-space'>
+                <p>Foto del Producto</p>
+                <input type='file' name='foto' multiple>
+            </div>
+            <div class='edit-space'>
+                <input type='number' name='precio' placeholder='Precio'>
+            </div>
+            <div class='edit-space'>
+                <select name='seccion'>
+                    <option disabled selected>Sección</option>
+                    <option value=''>Todas la opciones</option>
+                </select>
+            </div>
+            <div class='edit-space'>
+                <input type='number' name='descuento' placeholder='Porcentaje de Descuento'>
+            </div>
+            <div class='edit-space'>
+                <input type='text' name='talles' placeholder='Talles disponibles de la prenda'>
+            </div>
+            <div class='edit-space'>
+                <input type='text' name='colores' placeholder='Colores disponibles de la prenda'>
+            </div>
+            <div class='edit-space'>
+                <input type='text' name='descripcion' placeholder='Descripcion de la prenda'>
+            </div>
+            <div class='edit-space'>
+                <p>Medidas para Envío</p>
+                <div class='edit-space-m'>
+                    <input type='number' name='ancho' placeholder='Ancho (cm)'>
+                    <input type='number' name='largo' placeholder='Largo (cm)'>
+                    <input type='number' name='alto' placeholder='Alto (cm)'>
+                </div>
+            </div>
+            <div class='center-button'>
+                <button type='submit' class='save-changes'>Guardar Cambios</button>
+            </div>
+        </form>
+    </main>
+
+    <dialog class='style-loginAdm' id='popup-loginAdm'>
+        <%- include('../partials/loginAdmin.ejs')%>
+    </dialog>
+    <%- include('../partials/footer.ejs')%>
+    <script src='/js/main/footer.js'></script>
+    <script src='/js/main/header.js'></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <link rel='stylesheet' href='/css/main/home.css'>
+    <link rel='stylesheet' href='/css/user/login.css'>
+    <link rel='stylesheet' href='/css/admin/loginAdmin.css'>
+    <link rel='stylesheet' href='/css/user/register.css'>
+    <%- include('../partials/head.ejs')%>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+    <dialog id='popup-login' class='style-login'>
+        <%- include('../partials/login.ejs')%>
+    </dialog>
+    <main>
+        <div class='info-conteiner font'>
+            <h1 class='title'>CREÁ TU CUENTA</h1>
+
+            <form action='/user/register/' method='POST' class='register-form'>
+                <div class='complete-container'>
+                    <p>Nombre y Apellido (*)</p>
+                    <input type='text' name='nombre'>
+                </div>
+                <div class='complete-container'>
+                    <p>Cómo te gustaría que te llamemos?</p>
+                    <input type='text' name='apodo'>
+                </div>
+                <div class='complete-container'>
+                    <p>Foto de Perfil</p>
+                    <input type='file' name='avatar' class='foto-input'>
+                </div>
+                <div class='complete-container'>
+                    <p>Email(*)</p>
+                    <input type='email' name='email'>
+                </div>
+                <div class='complete-container'>
+                    <p>Teléfono</p>
+                    <input type='number' name='telefono'>
+                </div>
+                <div class='complete-container'>
+                    <p>Provincia</p>
+                    <select name='provincia'>
+                        <option selected>Seleccioná tu opción</option>
+                        <% for( let i=0; i < listado.length; i++ ) { %>
+                            <option>
+                                <%= listado[i].nombre %>
+                            </option>
+                            <% } %>
+                    </select>
+                </div>
+                <div class='complete-container'>
+                    <p>Localidad</p>
+                    <select name='localidad'>
+                        <option selected>Seleccioná tu opción</option>
+                    </select>
+                </div>
+                <div class='complete-container'>
+                    <p>Dirección (*)</p>
+                    <input type='text' name='direccion'>
+                </div>
+                <div class='complete-container'>
+                    <p>Contraseña (*)</p>
+                    <input type='password' name='contraseña'>
+                </div>
+                <div class='complete-container'>
+                    <p>Confirmar Contraseña (*)</p>
+                    <input type='password' name='contraseñacheck'>
+                </div>
+                <div class='button-box'>
+                    <button type='submit' class='create-button'>CONFIRMA TU CUENTA</button>
+                </div>
+            </form>
+
+        </div>
+    </main>
+    <dialog class='style-loginAdm' id='popup-loginAdm'>
+        <%- include('../partials/loginAdmin.ejs')%>
+    </dialog>
+    <%- include('../partials/footer.ejs') %>
+    <script src='/js/main/footer.js'></script>
+    <script src='/js/main/header.js'></script>
+</body>
+
+</html>

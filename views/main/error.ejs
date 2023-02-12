@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='stylesheet' href='/css/main/home.css'>
+    <link rel='stylesheet' href='/css/user/login.css'>
+    <link rel='stylesheet' href='/css/admin/loginAdmin.css'>
+    <link rel='stylesheet' href='/css/main/error.css'>
+    <%- include('../partials/head.ejs')%>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs')%>
+    <dialog id='popup-login' class='style-login'>
+        <%- include('../partials/login.ejs')%>
+    </dialog>
+    <main class='error-main font'>
+        <h1 style='color: #DC7633;'>UPS!</h1>
+
+        <p class='error-message'>ERROR 404</p>
+
+        <div class='m-i'>
+            <img src='/images/web/error.png' alt='Imagen Error' class='error-image'>
+            <p>La página que estás buscando no está en el servidor</p>
+        </div>
+
+        <p class='options'>Podés probar con los siguientes links:</p>
+        <ul class='list'>
+            <li><a href='/'>Página Principal</a></li>
+            <li><a href='#'>Nuestros Productos</a></li>
+            <li><a href='/user/register'>Registrate</a></li>
+        </ul>
+
+    </main>
+    <dialog class='style-loginAdm' id='popup-loginAdm'>
+        <%- include('../partials/loginAdmin.ejs')%>
+    </dialog>
+    <%- include('../partials/footer.ejs')%>
+      
+    <script src='/js/main/footer.js'></script>
+    <script src='/js/main/header.js'></script>
+    <script src='/js/main/web.js'></script>
+</body>
+</html>

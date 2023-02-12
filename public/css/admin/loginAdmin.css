@@ -1,0 +1,37 @@
+.style-loginAdm{
+    background-color: #AED6F1;
+    box-shadow: 0px 0px 10px #85C1E9;
+    border: none;
+    width: 70%;
+}
+
+.style-loginAdm::backdrop{
+    background-color: rgba(0,0,0,.55);
+}
+
+.start{
+    font-size: 18px;
+    padding: 1rem 0.5rem 0 0.5rem;
+    color: #2471A3;
+}
+
+.checkin-buttonAdmin{
+    background-color: #5499C7;
+    border: solid 2px white;
+}
+
+.close-admin{
+    color: #2471A3;
+    border: none;
+    background-color: #AED6F1;
+}
+
+@media(min-width: 1100px){
+    .style-loginAdm{
+        width: 50%;
+    }
+
+    .start{
+        font-size: 25px;
+    }
+}

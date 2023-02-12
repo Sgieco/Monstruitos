@@ -1,0 +1,107 @@
+.edit-main, .new-main{
+    background-color: #D6EAF8;
+    padding: 170px 15px 25px 15px;
+}
+
+.edit-title, .new-title{
+    color: #2471A3;
+    background-color: #D6EAF8;
+    text-decoration: underline;
+    border: solid 2px white;
+    padding: 5px;
+}
+
+.edit-form, .new-form{
+    border: solid 2px white;
+    padding: 10px;
+}
+
+.edit-space input{
+    width: 70%;
+    padding: 0.2rem;
+    margin: 10px;
+    border: solid 1px #2471A3;
+}
+
+.edit-space select{
+    color: #2471A3;
+    background-color: #D6EAF8;
+    border: solid 2px #2471A3;
+    padding: 0.2rem;
+    margin: 10px;
+    border-radius: 1rem;
+    width: 70%;
+    text-align: center;
+}
+
+.edit-space p{
+    font-size: 16px;
+    margin: 5px 10px;
+}
+
+.edit-space-m{
+    display: flex;
+    width: 90%;
+}
+
+.save-changes{
+    background-color: #2471A3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.2rem;
+    width: 100%;
+}
+
+.save-changes:hover{
+    background-color: #85C1E9;
+}
+
+.center-button{
+    margin: 1rem auto;
+    width: 50%;
+}
+
+
+@media(min-width: 768px){
+    .edit-main, .new-main{
+        padding: 185px 15px 25px 15px;
+    }
+
+    .edit-space select {
+        width: 50%;
+        text-align: center;
+    }
+}
+
+@media(min-width: 1024px){
+    .edit-main, .new-main {
+        padding: 230px 15px 25px 15px;
+    }
+
+    .center-button{
+        width: 40%;
+    }
+}
+
+@media(min-width: 1100px){
+    .edit-main, .new-main {
+        padding: 235px 15px 25px 15px;
+    }
+
+    .edit-space input{
+        width: 60%;
+    }
+
+    .edit-space select{
+        width: 40%;
+    }
+
+    .center-button{
+        width: 30%;
+    }
+
+    .edit-space-m{
+        width: 62%;
+    }
+}

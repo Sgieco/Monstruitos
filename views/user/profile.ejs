@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel='stylesheet' href='/css/main/home.css'>
+    <link rel='stylesheet' href='/css/user/login.css'>
+    <link rel='stylesheet' href='/css/user/profile.css'>
+    <link rel='stylesheet' href='/css/admin/loginAdmin.css'>
+    <%- include('../partials/head.ejs')%>
+</head>
+
+<body>
+    <%- include('../partials/header.ejs')%>
+    <dialog id='popup-login' class='style-login'>
+        <%- include('../partials/login.ejs')%>
+    </dialog>
+    <main class='profile-main font'>
+
+        <h3>Bienvenido a Tu Perfil (apodo)</h3>
+        <div class='data-box'>
+            <div class='box1'>
+                <img src='/images/users/fotoperfil.png' alt="Foto de Perfil" class='profile-image'>
+            </div>
+
+            <div class='box2'>
+                <h6>Tus datos:</h6>
+                <p>Nombre:</p>
+                <p>Email:</p>
+                <p>Teléfono:</p>
+
+                <h6>Datos de Envío:</h6>
+                <p>Provincia:</p>
+                <p>Localidad:</p>
+                <p>Dirección:</p>
+            </div>
+        </div>
+
+        <div class='tools'>
+            <a href='#' class='edit'>Editar Datos</a>
+            <button class='delete'>Eliminar Perfil</button>
+        </div>
+
+        <div class='box3'>
+            <div class='orders'>
+                <a href='#'>
+                    <p style='text-decoration: underline;'>Mis Pedidos</p>
+                    <p>Podés tener registro de tus compras con nosotros</p>
+                </a>
+            </div>
+            <div class='shop'>
+                <a href=''>
+                    <p>¡Quiero empezar a comprar!</p>
+                </a>
+            </div>
+        </div>
+    </main>
+    <dialog class='style-loginAdm' id='popup-loginAdm'>
+        <%- include('../partials/loginAdmin.ejs')%>
+    </dialog>
+    <%- include('../partials/footer.ejs')%>
+    <script src='/js/main/footer.js'></script>
+    <script src='/js/main/header.js'></script>
+</body>
+
+</html>

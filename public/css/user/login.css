@@ -1,0 +1,158 @@
+*{
+    box-sizing: border-box;
+}
+
+.font{
+    font-family: 'Magra', sans-serif;
+}
+
+.text-decoration{
+    text-decoration: none;
+}  
+
+.style-login{
+    border: none;
+    width: 70%;
+    background-color: #FDF2E9;
+    box-shadow: 0px 0px 10px #E59866;
+
+}
+
+.style-login::backdrop{
+    background-color: rgba(0,0,0,.55);
+}
+
+.style-close{
+    background-color: #FDF2E9;
+    color: #E59866;
+    border: none;
+    text-align: right;
+}
+
+.login-logo{
+    width: 4rem;
+}
+
+.flex-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px white;
+    margin: 0.5rem 0;
+}
+
+.start-mesagge{
+    font-size: 18px;
+    padding: 1rem 0.5rem 0 0.5rem;
+    color: #48C9B0;
+}
+
+.form{
+    border: solid 2px white;
+    padding: 0.5rem;
+}
+
+.complete-box p{
+    font-size: 14px;
+}
+
+.complete-box {
+    text-align: center;
+}
+
+.password-forgot{
+    font-size: 14px;
+    padding: 0.7rem;
+    color: black;
+    text-align: center;
+}
+
+.remember-box{
+    display: flex;
+    justify-content: center;
+}
+
+.remember-text{
+    font-size: 14px;
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.checkin-button{
+    background-color: #F5CBA7;
+    border: solid 2px white;
+    color: #48C9B0;
+}
+
+.button{
+    text-align: center;
+    margin: 1rem;
+}
+
+.create-box{
+    display: flex;
+    font-size: 14px;
+    justify-content: space-around;
+}
+
+.create-box a{
+    color: black;
+    text-decoration: none;
+}
+
+
+
+@media(min-width: 768px){
+    .login-logo {
+        width: 5.5rem;
+    }
+
+    .start-mesagge {
+        font-size: 22px;
+    }
+
+    .complete-box input{
+        width: 50%;
+    }
+
+    .create-box{
+        width: 50%;
+        margin: auto;
+    }
+
+}
+
+@media(min-width: 1024px){
+    .create-box {
+        width: 40%;
+    }
+    
+}
+
+@media(min-width: 1100px){
+    .style-login{
+        width: 50%;
+    }
+
+    .login-logo{
+        width: 6.5rem;
+    }
+
+    .start-mesagge{
+        font-size: 25px;
+    }
+
+    .complete-box p{
+        font-size: 16px;
+    }
+
+    .checkin-button{
+        width: 7.5rem;
+        height: 2rem;
+        font-size: 18px;
+    }
+
+    .create-box p{
+        font-size: 16px;
+    }
+}
