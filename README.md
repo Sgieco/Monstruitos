@@ -10,5 +10,4 @@ Este proyecto va a contar con varias ramas:
 2. CRUD: la web tiene la posibilidad de crear, editar y eliminar productos desde un usuario administrador
 3. Middlewares y autenticacion: inicio/salida de sesion, edicion de perfil y proteccion de rutas
 4. Validaciones de formularios, tanto de back-end como de front-end
-5. Creacion de APIS para uso en tablero de React, funcionalidades extras: buscador, panel para cambios de publicidades en la home
-6. Tablero en React JS
+5. Creacion de APIS para uso en tablero de React
