@@ -1,0 +1,276 @@
+.main-detail{
+    padding: 180px 10px 10px 10px;
+    background-color: #fff8f3;
+}
+
+.admin-box{
+    display: flex;
+    justify-content: space-around;
+}
+
+.admin-box a, .admin-box button{
+    color: white;
+    background-color: #D35400;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.admin-box button{
+    border: none;
+}
+
+.category{
+    font-size: 14px;
+    margin: 1rem 0rem;
+}
+
+.detail-box{
+    display: flex;
+    justify-content: space-between;
+}
+.detail-image{
+    width: 50%;
+}
+
+.detail-info{
+    width: 50%;
+}
+.name{
+    font-size: 16px;
+    border-bottom: solid 1px;
+}
+
+.discount-box{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    border: solid 1px #D35400;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.discount-box p{
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.disc-info{
+    border-right:solid 1px #D35400 ;
+    background-color: #EDBB99;
+}
+
+.price-b{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.price-b p{
+    margin: 0;
+}
+
+.selectores select{
+    background-color: #EDBB99;
+    border: solid 1px #D35400;
+    width: 5rem;
+    text-align: center;
+    margin: 0.5rem;
+    border-radius: 5px;
+}
+
+.sizes-box button{
+    background-color: #fff8f3;
+    border: none;
+    font-size: 14px;
+}
+
+.add-button{
+    background-color: #EDBB99;
+    border: none;
+    border-radius: 5px;
+    padding: 5px
+}
+
+.add-button:hover{
+    background-color: #FAE5D3;
+}
+
+.add-box{
+    text-align: center;
+}
+
+.descrip-box{
+    margin-top: 2rem;
+}
+
+.descrip-box p{
+    font-size: 14px;
+}
+
+h5{
+    margin-bottom: 1rem;
+    border-bottom: solid 1px #D35400;
+}
+
+@media(min-width: 768px){
+    .main-detail{
+        padding: 190px 25px 10px 25px;  
+    }
+
+    .category{
+        font-size: 15px;
+    }
+
+    .detail-image {
+        width: 45%;
+    }
+
+    .detail-info {
+        width: 45%;
+        margin-right: 5%;
+    }
+
+    .name{
+        font-size: 18px;
+    }
+
+    .price{
+        font-size: 20px;
+        text-decoration: line-through;
+    }
+
+    .price-b{
+        margin: 2rem 0;
+    }
+
+    .discount-box{
+        width: 45%;
+    }
+
+    .discount-box p{
+        font-size: 24px;
+    }
+
+    .selectores select{
+        margin: 2rem;
+        height: 1.8rem;
+    }
+
+    .sizes-box p{
+        margin-left: 1.5rem;
+        font-size: 15px;
+    }
+
+    .add-button{
+        border-radius: 20px;
+        width: 85%;
+    }
+
+    .add-box{
+        margin: 0.5rem;
+    }
+
+    .descrip-box p {
+        font-size: 15px;
+    }
+
+}
+
+@media(min-width: 1024px){
+    .main-detail {
+        padding: 235px 30px 15px 30px;
+    }
+
+    .admin-box{
+        justify-content: space-between;
+        width: 45%;
+    }
+
+    .name {
+        font-size: 20px;
+    }
+
+    .price-b {
+        margin: 3rem 0;
+    }
+
+    .selectores select {
+        margin: 2.5rem;
+        height: 1.8rem;
+        width: 8rem;
+    }
+
+    .sizes-box p {
+        margin-left: 2rem;
+        font-size: 16px;
+    }
+
+    .add-box {
+        margin: 1.5rem;
+    }
+
+    .descrip-box p {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1100px) {
+
+    .main-detail {
+        padding: 240px 40px 20px 40px;
+    }
+
+    .admin-box{
+        width: 20%;
+        margin-left: 11.5rem;
+    }
+    
+    .category{
+        font-size: 16px;
+        margin-left: 11.5rem;
+    }
+
+    .detail-box{
+        justify-content: center;
+    }
+
+    .detail-image{
+        width: 35%;
+        margin: 0rem 2rem;
+    }
+
+    .detail-info{
+        width: 35%;
+    }
+
+    .name{
+        font-size: 20px;
+    }
+
+    .price{
+        font-size: 25px;
+    }
+
+    .discount-box{
+        width: 30%;
+    }
+
+    .discount-box p{
+        font-size: 26px;
+    }
+
+    .selectores select{
+        margin: 3.5rem;
+    }
+
+    .sizes-box{
+        margin-left: 1rem;
+    }
+
+    .add-button{
+        width: 85%;
+        font-size: 18px;
+    }
+}

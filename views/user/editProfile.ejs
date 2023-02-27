@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 
 <head>
     <%- include('../partials/head.ejs')%>
@@ -7,10 +7,9 @@
 
 <body>
     <%- include('../partials/header.ejs') %>
-
     <main>
         <div class='info-conteiner font'>
-            <h1 class='title'>CREÁ TU CUENTA</h1>
+            <h1 class='title'>EDITÁ TUS DATOS</h1>
 
             <form action='/user/register/' method='POST' class='register-form'>
                 <div class='complete-container'>
@@ -20,10 +19,6 @@
                 <div class='complete-container'>
                     <p>Cómo te gustaría que te llamemos?</p>
                     <input type='text' name='apodo'>
-                </div>
-                <div class='complete-container'>
-                    <p>Foto de Perfil</p>
-                    <input type='file' name='avatar' class='foto-input'>
                 </div>
                 <div class='complete-container'>
                     <p>Email(*)</p>
@@ -36,7 +31,7 @@
                 <div class='complete-container'>
                     <p>Provincia</p>
                     <select name='provincia'>
-                        <option selected>Seleccioná tu opción</option>
+                         <option selected>Seleccioná tu opción</option>
                         <% for( let i=0; i < listado.length; i++ ) { %>
                             <option>
                                 <%= listado[i].nombre %>
@@ -54,24 +49,14 @@
                     <p>Dirección (*)</p>
                     <input type='text' name='direccion'>
                 </div>
-                <div class='complete-container'>
-                    <p>Contraseña (*)</p>
-                    <input type='password' name='contraseña'>
-                </div>
-                <div class='complete-container'>
-                    <p>Confirmar Contraseña (*)</p>
-                    <input type='password' name='contraseñacheck'>
-                </div>
                 <div class='button-box'>
-                    <button type='submit' class='create-button'>CONFIRMA TU CUENTA</button>
+                    <button type='submit' class='create-button'>GUARDAR CAMBIOS</button>
                 </div>
             </form>
 
         </div>
     </main>
-
     <%- include('../partials/footer.ejs') %>
-
 </body>
 
 </html>

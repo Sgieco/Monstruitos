@@ -1,6 +1,6 @@
 .error-main{
     background-color: #FEF5E7;
-    padding: 180px 40px 20px 40px;
+    padding: 80px 40px;
 }
 
 h1{
@@ -91,6 +91,9 @@ h1{
 }
 
 @media(min-width: 1100px){
+    .error-main{
+        padding: 80px 70px;
+    }
     .error-image {
         width: 15%;
     }

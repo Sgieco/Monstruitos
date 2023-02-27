@@ -1,6 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs')%>
+</head>
+
 <body>
-    <div class='contenedor'>
-        <p class='prueba'>HOLA, ES UNA PRUEBA</p>
-        <button id='close-cart'>X</button>
-    </div>
+    <%- include('../partials/header.ejs')%>
+        <main class='cart-main font'>
+
+            <h3 class='cart-title'>Tu Carrito</h3>
+            <div class='panel'>
+                <div class='panel1'>
+                    <article class='info-box'>
+                        <div class='n-d'>
+                            <p>Buzo Corto Piel c/ Lurex</p>
+                            <a href='#'><i class='fas fa-trash'></i></a>
+                        </div>
+                        <div class='prod-box'>
+                            <img src='/images/products/fotoproducto.jpg' class='p-image'>
+                            <div class='price-cant'>
+                                <div class='cant'>
+                                    <button type='submit' id='resta'>-</button>
+                                    <input type='number' value='1' id='contador'>
+                                    <button type='submit' id='suma'>+</button>
+                                </div>
+                                <p>$6000</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class='info-box'>
+                        <div class='n-d'>
+                            <p>Buzo Corto Piel c/ Lurex</p>
+                            <a href='#'><i class='fas fa-trash'></i></a>
+                        </div>
+                        <div class='prod-box'>
+                            <img src='/images/products/fotoproducto.jpg' class='p-image'>
+                            <div class='price-cant'>
+                                <div class='cant'>
+                                    <button type='submit'>-</button>
+                                    <input type='number' value='1'>
+                                    <button type='submit'>+</button>
+                                </div>
+                                <p class='non-discount'>$6000</p>
+                                <p class='si-discount'>$4300</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class='panel2'>
+                    <h4>SUBTOTAL: $10300</h4>
+
+                    <div class='shipping-box'>
+                        <h5 class='shipping-title'>ENVIO</h5>
+                        <div class='o-s'>
+                            <div class='shipping'>
+                                <div class='shipping-option'>
+                                    <input type='radio' name='envio'>
+                                    <p>A domicilio</p>
+                                </div>
+                                <input type='text' name='postal-code' placeholder='Codigo postal'
+                                    class='code-space'><button type='submit'>CALCULAR</button>
+                                <br>
+                                <a href='#'>No se mi código postal</a>
+                            </div>
+                            <div class='shipping'>
+                                <div class='shipping-option'>
+                                    <input type='radio' name='envio'>
+                                    <p>Retiro en Sucursal:</p>
+                                </div>
+                                <p>Retirá tu pedido sin costo dentro de las 48 hs hábiles en Jose A. Cabrera 3250, CABA
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>TOTAL: $11000</h4>
+                    <div class='shop-button'>
+                        <button type='submit' name='compra' class='shop-finish'>INICIAR COMPRA</button>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    <%- include('../partials/footer.ejs')%>
 </body>
+
+</html>

@@ -18,4 +18,3 @@ openLogin.addEventListener('click', ()=> {
 closeLogin.addEventListener('click', () => {
     popupLogin.close();
 });
-

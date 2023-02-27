@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs')%>
+</head>
+<body>
+    <%- include('../partials/header.ejs')%>
+    <main class='main-detail font'>
+
+        <div class='admin-box'>
+            <a href='#'>Editar Producto</a>
+            <form action='/' method='POST'>
+                <button type='submit'>Eliminar Producto</button>
+            </form>
+        </div>
+
+        <p class='category'>Categoría Principal < Categoría Secundaria</p>
+
+        <div class='detail-box'>
+           <img src='/images/products/fotoproducto.jpg' alt='Imagen del Producto' class='detail-image'>
+           <div class='detail-info'>
+                <p class='name'>Nombre del Producto</p>
+                <div>
+                    <div class='price-b'>
+                        <p class='price'>$5000</p>
+                        <div class='discount-box'>
+                            <p class='disc-info'>15%</p>
+                            <p class='price-info'>$4250</p>
+                        </div>
+                    </div>
+                    <div class='selectores'>
+                        <select name='talles'>
+                            <option disabled selected>Talle</option>
+                            <option>3</option>
+                        </select>
+
+                        <select name='color'>
+                            <option disabled selected>Color</option>
+                            <option>Rosa</option>
+                        </select>
+                    </div>
+                    <div class='sizes-box'>
+                        <button id='open-info'>
+                          <p>Consulta nuestra Tabla de Talles</p>
+                        </button>
+                    </div>
+
+                    <dialog class='style' id='popup-sizes'>
+                        <img src='/images/web/tablatalles.jpg' alt='Tabla de Talles' class='chart'>
+                        <br>
+                        <button id='close-info' class='info-button'>Cerrar</button>
+                    </dialog>
+
+                    <div class='add-box'>
+                        <button type='submit' class='add-button'>Agregar <img src='/images/web/carritomonstruitos.png' alt='Icono Carrito' class='icon'></button>
+                    </div>
+
+                </div>
+           </div>
+
+        </div>
+        <div class='descrip-box'>
+            <h6>Descripcion y Recomendaciones:</h6>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga rerum porro dignissimos, assumenda ipsa adipisci fugiat aliquam, odit, consectetur optio cupiditate neque et. Cupiditate nobis ea nostrum dolore consequatur quis?</p>
+        </div>
+
+        <h5>También te puede interesar:</h5>
+
+        <div class='product-box'>
+            <a href='#'>
+              <img src='/images/products/fotoproducto.jpg' class='product-image' alt='Product'>
+            </a>
+    
+            <div class='product-information'>
+              <p class='information font'>Nombre del producto</p>
+              <p class='information font'>$1000</p>
+              <div class='box-1'>
+                <select name='size' class='size-selector font'>
+                  <option disabled selected>Talle</option>
+                  <option>2</option>
+                </select>
+                <select name='amount' class='amount-selector font'>
+                  <option disable selected>Cantidad</option>
+                  <% for( let i=0; i < 10; i++ ) { %>
+                    <option><%=[i]%></option>
+                    <% } %>
+                </select>
+                <a href='#'><img src='/images/web/carritomonstruitos.png' alt='Cart' class='cart cart-box'></a>
+              </div>
+            </div>
+        </div>
+
+    </main>
+    <%- include('../partials/footer.ejs')%>
+    <script src='/js/main/web.js'></script>
+</body>
+</html>

@@ -8,9 +8,15 @@ const productController = {
         res.render('editProduct')
     },
 
+    productDetail: (req,res) =>{
+        res.render('productDetail')
+    },
+
     cart: (req, res) => {
         res.render('productCart')
-    },
+    }
+
+    
 }
 
 

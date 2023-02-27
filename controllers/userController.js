@@ -13,6 +13,14 @@ const userController = {
 
     userProfile: (req, res) => {
         res.render('profile')
+    },
+
+    editProfile: (req,res) => {
+        fetch('https://apis.datos.gob.ar/georef/api/provincias')
+        .then(response => response.json())
+        .then(data => {
+            res.render('editProfile', {listado: data.provincias})
+        })
     }
 }
 
