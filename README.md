@@ -1,5 +1,4 @@
 #Monstruitos
--------------------------------------------------------![logosinfondo](https://user-images.githubusercontent.com/122408051/221714742-eeead745-74f4-4394-aec3-c055f5074fe9.png)
 
 
 La idea de este proyecto es replicar el trabajo final que realice de manera grupal en el curso de Full Stack Developer, tratando de mejorar sus funcionalidades como por
