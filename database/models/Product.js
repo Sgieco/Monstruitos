@@ -72,12 +72,6 @@ module.exports = function(sequelize, dataTypes) { // le explicamos a sequelize n
             foreignKey: "seccion_id"
         });
 
-        Product.belongsToMany(models.Carrito,{
-            as: "carritos", //del producto pedimos en cuantos y en que carritos esta
-            foreignKey: "product_id",
-            through: "carrito_product",
-        })
-
 
     }
 

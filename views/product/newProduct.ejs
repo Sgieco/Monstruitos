@@ -7,7 +7,7 @@
     <%- include('../partials/header.ejs')%>
     <main class='new-main font'>
         <h2 class='new-title'>CARGA DE PRODUCTOS</h2>
-        <form action='/products/newProduct/' method='POST' class='new-form'>
+        <form action='/products/newProduct/' method='POST' class='new-form' enctype="multipart/form-data">
             <div class='edit-space'>
                 <input type='text' name='nombre' placeholder="Nombre del Producto">
             </div>

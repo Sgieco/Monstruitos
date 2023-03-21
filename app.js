@@ -3,6 +3,8 @@ const app = express();
 const path = require ('path');
 
 const dotenv = require('dotenv').config();
+const methodOverride = require("method-override");
+
 
 
 //RUTAS
@@ -26,6 +28,12 @@ app.use('/', mainRoutes);
 app.use('/user', userRoutes);
 app.use('/products', productRoutes);
 
+//PARA USO DEL REQ.BODY
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+
+//PARA EL USO DE METODOS PUT Y DELETE
+app.use(methodOverride ("_method")); 
 
 
 //SERVIDOR

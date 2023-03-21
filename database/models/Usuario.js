@@ -50,12 +50,6 @@ module.exports = function(sequelize, dataTypes) {
 
     let Usuario =   sequelize.define(alias,cols,config);
 
-    Usuario.associate = function(models){
-        Usuario.hasMany(models.Carrito,{
-            as: "carritos", // del usuario pedimos todos los carritos que hizo
-            foreignKey: "usuario_id"
-        })
-    }
 
     return Usuario
 }
