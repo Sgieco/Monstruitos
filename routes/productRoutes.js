@@ -6,6 +6,9 @@ const productController = require('../controllers/productController');
 //FORM NUEVO PRODUCTO
 router.get('/newProduct', productController.newProduct);
 
+//CARGAMOS NUEVO PRODUCTO
+router.post('/newProduct/', productController.create);
+
 //FORM EDICION PRODUCTOS
 router.get('/editProduct', productController.editProduct);
 

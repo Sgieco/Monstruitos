@@ -4,6 +4,11 @@ const productController = {
         res.render('newProduct')
     },
 
+    create:(req,res) => {
+        
+
+    },
+
     editProduct: (req,res) => {
         res.render('editProduct')
     },
