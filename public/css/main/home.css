@@ -27,12 +27,26 @@
     height: 2rem;
 }
 
+@keyframes movimiento {
+    from{
+        transform: translateX(100%);
+    }
+
+    to{
+        transform: translateX(-100%);
+    }
+}
+
 .welcome-message{
     font-weight: bold;
     color: white;
-    text-align: center;
     font-size: 16px;  
     padding: 0.2rem;
+    animation-name: movimiento;
+    animation-delay: 0s;
+    animation-duration: 13s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear
 }
 
 .main-header{
@@ -416,7 +430,17 @@ h2{
         width: 100%!important;
         height: 30vw;
    }
+    /*
+   .carousel-inner{
+        display: flex;
+   }
 
+   .carousel-item{
+        margin: auto;
+        display: block;
+        flex: 0 0 calc(100%/4);
+   }
+   */
    .box{
         font-size: 14px;
         padding: 1rem 0.5rem 0.5rem 0.5rem;

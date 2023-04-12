@@ -15,6 +15,9 @@ router.get('/products', mainController.products);
 //VISUAL DE OFETRAS
 router.get('/sale', mainController.sale);
 
+//BUSCADOR DE PRODUCTOS
+//router.post('/search', mainController.search);
+
 
 
 module.exports = router

@@ -18,33 +18,15 @@
                             <a href='#'><i class='fas fa-trash'></i></a>
                         </div>
                         <div class='prod-box'>
-                            <img src='/images/products/fotoproducto.jpg' class='p-image'>
+                            <img src='/images/products/foto14.jpg' class='p-image'>
                             <div class='price-cant'>
+                                <p style='margin: 0;'>Cantidad:</p>
                                 <div class='cant'>
                                     <button type='submit' id='resta'>-</button>
                                     <input type='number' value='1' id='contador'>
                                     <button type='submit' id='suma'>+</button>
                                 </div>
                                 <p>$6000</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class='info-box'>
-                        <div class='n-d'>
-                            <p>Buzo Corto Piel c/ Lurex</p>
-                            <a href='#'><i class='fas fa-trash'></i></a>
-                        </div>
-                        <div class='prod-box'>
-                            <img src='/images/products/fotoproducto.jpg' class='p-image'>
-                            <div class='price-cant'>
-                                <div class='cant'>
-                                    <button type='submit'>-</button>
-                                    <input type='number' value='1'>
-                                    <button type='submit'>+</button>
-                                </div>
-                                <p class='non-discount'>$6000</p>
-                                <p class='si-discount'>$4300</p>
                             </div>
                         </div>
                     </article>
@@ -64,7 +46,7 @@
                                 <input type='text' name='postal-code' placeholder='Codigo postal'
                                     class='code-space'><button type='submit'>CALCULAR</button>
                                 <br>
-                                <a href='#'>No se mi código postal</a>
+                                <a href='https://codigopostal.com.ar/' target='_blank'>No se mi código postal</a>
                             </div>
                             <div class='shipping'>
                                 <div class='shipping-option'>
@@ -85,6 +67,7 @@
             </div>
         </main>
     <%- include('../partials/footer.ejs')%>
+    <script src='/js/product/cart.js'></script>
 </body>
 
 </html>

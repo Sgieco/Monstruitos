@@ -1,9 +1,19 @@
 const botonResta = document.querySelector('#resta');
-const contador = document.querySelector('#contador').value;
 const botonSuma = document.querySelector('#suma');
 
-console.log(contador + 1)
+
+botonSuma.addEventListener('click', ()=>{
+    let contador = document.querySelector('#contador');
+    
+    let resultado = ++contador.value
+
+    contador = resultado
+})
 
 botonResta.addEventListener('click', ()=>{
-    contador.value + 1
+    let contador = document.querySelector('#contador');
+    
+    let resultado = --contador.value
+
+    contador = resultado
 })
