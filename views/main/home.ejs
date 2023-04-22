@@ -64,7 +64,7 @@
 
         <% for( let i=0; i < destacados.length; i++ ) { %>
           <div class='product-box'>
-            <a href='#'>
+            <a href='/products/productDetail/<%= destacados[i].id %>'>
               <img src='/images/products/<%= destacados[i].imagen %>' class='product-image' alt='Product'>
             </a>
 
@@ -111,7 +111,7 @@
             <div class='seccion-box'>
               <% for( let i=0; i < ofertas.length; i++ ) { %>
                 <div class='product-box'>
-                  <a href='#'>
+                  <a href='/products/productDetail/<%= ofertas[i].id %>'>
                     <img src='/images/products/<%= ofertas[i].imagen %>' class='product-image' alt='Product'>
                   </a>
       
@@ -124,7 +124,7 @@
                          
                       <% if (ofertas[i].descuento) { %>
                         <% let precioFinal=ofertas[i].precio - ((ofertas[i].precio * ofertas[i].descuento)/ 100); %>
-                          <p class='information font final-price'>$<%=precioFinal%></p>
+                        <p class='information font final-price'>$<%=precioFinal%></p>
                       <% } %>
                     </div>
       

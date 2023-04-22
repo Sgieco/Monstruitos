@@ -94,11 +94,22 @@ const productController = {
     },
 
     productDetail: (req, res) => {
-        res.render('productDetail')
+        db.Product.findByPk(req.params.id)
+        .then(function(producto){
+            res.render('productDetail', {producto:producto})
+        })  
     },
 
     cart: (req, res) => {
         res.render('productCart')
+    },
+
+    allProducts: (req,res) => {
+        db.Product.findAll({
+
+        }).then(function(productos){
+                res.render('products', {productos:productos})
+            })    
     }
 
 

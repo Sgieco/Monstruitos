@@ -34,8 +34,9 @@ router.delete('/productDetail/:id/', productController.delete);
 router.get ('/cart', productController.cart);
 
 //DETALLE DE PRODUCTO
-router.get('/productDetail', productController.productDetail);
+router.get('/productDetail/:id', productController.productDetail);
 
-
+//VER TODOS LOS PRODUCTOS
+router.get('/all', productController.allProducts);
 
 module.exports = router;

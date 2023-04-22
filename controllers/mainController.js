@@ -32,7 +32,14 @@ const mainController = {
     },
 
     sale: (req,res)=>{
-        res.render('saleProduct')
+        db.Product.findAll({
+            raw: true,
+            where:{
+                seccion_id: 2
+            }
+        }).then(function(ofertas){
+            res.render('saleProduct', {ofertas: ofertas})
+        })  
     }
 
    /* search: (req,res) => {

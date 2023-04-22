@@ -17,26 +17,32 @@
         <p class='category'>Categoría Principal < Categoría Secundaria</p>
 
         <div class='detail-box'>
-           <img src='/images/products/fotoproducto.jpg' alt='Imagen del Producto' class='detail-image'>
+           <img src='/images/products/<%= producto.imagen%>' alt='Imagen del Producto' class='detail-image'>
            <div class='detail-info'>
-                <p class='name'>Nombre del Producto</p>
+                <p class='name'><%= producto.nombre%></p>
                 <div>
-                    <div class='price-b'>
-                        <p class='price'>$5000</p>
-                        <div class='discount-box'>
-                            <p class='disc-info'>15%</p>
-                            <p class='price-info'>$4250</p>
+                    <% if (producto.descuento != 0) { %>
+                        <div class='price-b'>
+                            <p class='price'>$<%= producto.precio%></p>
+                            <div class='discount-box'>
+                                <p class='disc-info'><%= producto.descuento%>%</p>
+                                <% let precioFinal=producto.precio - ((producto.precio * producto.descuento)/ 100); %>
+                                <p class='price-info'>$<%=precioFinal%></p>
+                            </div>
                         </div>
-                    </div>
+                    <% } else {%>
+                        <p class='price' style='text-decoration: none; text-align: center; font-size: 30px;'>$<%= producto.precio%></p>
+                    <% } %>
+                    
                     <div class='selectores'>
                         <select name='talles'>
                             <option disabled selected>Talle</option>
-                            <option>3</option>
+                            <option><%= producto.talle%></option>
                         </select>
 
                         <select name='color'>
                             <option disabled selected>Color</option>
-                            <option>Rosa</option>
+                            <option><%= producto.color%></option>
                         </select>
                     </div>
                     <div class='sizes-box'>
@@ -61,35 +67,33 @@
         </div>
         <div class='descrip-box'>
             <h6>Descripcion y Recomendaciones:</h6>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga rerum porro dignissimos, assumenda ipsa adipisci fugiat aliquam, odit, consectetur optio cupiditate neque et. Cupiditate nobis ea nostrum dolore consequatur quis?</p>
+            <p><%= producto.descripcion%></p>
         </div>
 
         <h5>También te puede interesar:</h5>
-
-        <div class='product-box'>
-            <a href='#'>
-              <img src='/images/products/fotoproducto.jpg' class='product-image' alt='Product'>
-            </a>
+            <div class='product-box'>
+                <a href='#'>
+                    <img src='/images/products/foto1.jpeg' class='product-image' alt='Product'>
+                </a>
     
-            <div class='product-information'>
-              <p class='information font'>Nombre del producto</p>
-              <p class='information font'>$1000</p>
-              <div class='box-1'>
-                <select name='size' class='size-selector font'>
-                  <option disabled selected>Talle</option>
-                  <option>2</option>
-                </select>
-                <select name='amount' class='amount-selector font'>
-                  <option disable selected>Cantidad</option>
-                  <% for( let i=0; i < 10; i++ ) { %>
-                    <option><%=[i]%></option>
-                    <% } %>
-                </select>
-                <a href='#'><img src='/images/web/carritomonstruitos.png' alt='Cart' class='cart cart-box'></a>
-              </div>
+                <div class='product-information'>
+                    <p class='information font'>Nombre del producto</p>
+                    <p class='information font'>$1000</p>
+                    <div class='box-1'>
+                        <select name='size' class='size-selector font'>
+                            <option disabled selected>Talle</option>
+                            <option>2</option>
+                        </select>
+                        <select name='amount' class='amount-selector font'>
+                            <option disable selected>Cantidad</option>
+                            <% for( let i=0; i < 10; i++ ) { %>
+                            <option><%=[i]%></option>
+                            <% } %>
+                        </select>
+                        <a href='#'><img src='/images/web/carritomonstruitos.png' alt='Cart' class='cart cart-box'></a>
+                    </div>
+                </div>
             </div>
-        </div>
-
     </main>
     <%- include('../partials/footer.ejs')%>
     <script src='/js/main/web.js'></script>

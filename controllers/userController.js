@@ -9,6 +9,14 @@ const userController = {
         .then(data => {
             res.render('register', {listado: data.provincias})
         })
+
+       /* let pciaElegida = req.body.provincia;
+
+        fetch('https://apis.datos.gob.ar/georef/api/localidades?provincia='+pciaElegida+'&max=1000&campos=nombre')
+        .then(response => response.json())
+        .then(data => {
+            res.render('register', {ciudades: data.localidades})
+        }) */
     },
 
     userProfile: (req, res) => {

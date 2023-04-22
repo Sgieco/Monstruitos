@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/head.ejs')%>
+  <%- include('../partials/head.ejs')%>
 </head>
 <body>
-    <%- include('../partials/header.ejs')%>
+  <%- include('../partials/header.ejs')%>
     <main class='general-main' style='padding-bottom: 10px;'>
-        <h2 class='font' style='color: #FAD7A0;'> NUESTRAS OFERTAS </h2>
-
-        <div class='product-box' style='margin-bottom: 0;'>
-            <a href='#'>
-              <img src='/images/products/fotoproducto.jpg' class='product-image' alt='Product'>
-            </a>
+      <h2 class='font' style='color: #FAD7A0;'> NUESTRAS OFERTAS </h2>
+      <div class='seccion-box'>
+        <% for( let i = 0; i < ofertas.length; i++ ) { %>
+        <div class='product-box'>
+          <a href='/products/productDetail/<%= ofertas[i].id %>'>
+            <img src='/images/products/<%= ofertas[i].imagen %>' class='product-image' alt='Product'>
+          </a>
       
-            <div class='product-information'>
-              <p class='information font'>Nombre del producto</p>
-              <div class='price-box flex'>
-                <p class='information font inicial-price'>$1000</p>
-                <p class='information font discount'>20%</p>
-                  <p class='information font final-price'>$800</p>
-              </div>
-      
-              <div class='box-1'>
-                <select name='size' class='size-selector font'>
-                  <option disabled selected>Talle</option>
-                  <option>2</option>
-                </select>
-                <select name='amount' class='amount-selector font'>
-                  <option disable selected>Cantidad</option>
-                  <% for( let i=0; i < 10; i++ ) { %>
-                    <option>
-                      <%=[i]%>
-                    </option>
-                    <% } %>
-                </select>
-      
-                <a href='#'><img src='/images/web/carritomonstruitos.png' alt='Cart' class='cart cart-box'></a>
-              </div>
+          <div class='product-information'>
+            <p class='information font'><%= ofertas[i].nombre %></p>
+            <div class='price-box flex'>
+              <p class='information font inicial-price'>$<%= ofertas[i].precio %></p>
+              <p class='information font discount'><%= ofertas[i].descuento %>%</p>
+              <% let precioFinal=ofertas[i].precio - ((ofertas[i].precio * ofertas[i].descuento)/ 100); %>
+              <p class='information font final-price'>$<%=precioFinal%></p>
             </div>
+      
+            <div class='box-1'>
+              <select name='size' class='size-selector font'>
+                <option disabled selected>Talle</option>
+                <option><%= ofertas[i].talle %></option>
+              </select>
+              <select name='amount' class='amount-selector font'>
+                <option disable selected>Cantidad</option>
+                <% for( let i=0; i < 10; i++ ) { %>
+                  <option> <%=[i]%></option>
+                <% } %>
+              </select>
+      
+              <a href='#'><img src='/images/web/carritomonstruitos.png' alt='Cart' class='cart cart-box'></a>
+          </div>
         </div>
+      </div>
+      <% } %>
+    </div>
     </main>
-    <%- include('../partials/footer.ejs')%>
+  <%- include('../partials/footer.ejs')%>
 </body>
 </html>
