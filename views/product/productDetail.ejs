@@ -8,8 +8,9 @@
     <main class='main-detail font'>
 
         <div class='admin-box'>
-            <a href='#'>Editar Producto</a>
-            <form action='/' method='POST'>
+            <a href='/products/editProduct/<%= producto.id%>'>Editar Producto</a>
+
+            <form action='/products/productDetail/<%= producto.id%>/?_method=DELETE' method='POST'>
                 <button type='submit'>Eliminar Producto</button>
             </form>
         </div>
