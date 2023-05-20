@@ -6,6 +6,9 @@ const multer = require('multer');
 
 const productController = require('../controllers/productController');
 
+//MIDDLEWARE
+const authAdm = require('../middlewares/authAdmin');
+
 //ALMACEN DE FOTOS
 const storage  = multer.diskStorage({ 
     destination: (req, file, cb) =>{
@@ -20,16 +23,16 @@ const storage  = multer.diskStorage({
 const uploadFile = multer({storage}); //nombre bajo el cual llamamos al middleware
 
 //NUEVO PRODUCTO
-router.get('/newProduct', productController.newProduct);
+router.get('/newProduct',authAdm, productController.newProduct);
 router.post('/newProduct/', uploadFile.single('foto'), productController.create);
 
 //EDICION PRODUCTO
-router.get('/editProduct/:id', productController.editProduct);
-router.put('/editProduct/:id/', productController.changeProduct);
+router.get('/editProduct/:id',authAdm, productController.editProduct);
+router.put('/editProduct/:id/',authAdm, productController.changeProduct);
 
 
 //ELIMINAR PRODUCTO
-router.delete('/productDetail/:id/', productController.delete);
+router.delete('/productDetail/:id/',authAdm, productController.delete);
 
 //CARRITO
 router.get ('/cart', productController.cart);

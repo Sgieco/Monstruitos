@@ -23,7 +23,7 @@ const productController = {
             imagen: req.file.filename
         })
 
-        res.redirect("/products")
+        res.redirect("/products/all")
 
     },
 

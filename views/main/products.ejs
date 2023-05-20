@@ -1,50 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <%- include('../partials/head.ejs')%>
+  <%- include('../partials/head.ejs')%>
 </head>
+
 <body>
   <%- include('../partials/header.ejs')%>
-  <main class='general-main' style='padding-bottom: 10px;'>
-    <h2 class='font' style='color: #FAD7A0;'> TODOS NUESTROS PRODUCTOS </h2>
+    <main class='general-main' style='padding-bottom: 10px;'>
+      <h2 class='font' style='color: #FAD7A0;'> TODOS NUESTROS PRODUCTOS </h2>
 
-    <div class='seccion-box'>
-      <% for( let i = 0; i < productos.length; i++ ) { %>
-      <div class='product-box'>
-        <a href='/products/productDetail/<%= productos[i].id %>'>
-          <img src='/images/products/<%= productos[i].imagen %>' class='product-image' alt='Product'>
-        </a>
-    
-        <div class='product-information'>
-          <p class='information font'><%= productos[i].nombre %></p>
-            <div class='price-box flex'>
-              <% if (productos[i].descuento != 0) { %>
-                <p class='information font inicial-price'>$<%= productos[i].precio %></p>
-                <p class='information font discount'><%= productos[i].descuento %>%</p>
-                <% let precioFinal=productos[i].precio - ((productos[i].precio * productos[i].descuento)/ 100); %>
-                <p class='information font final-price'>$<%=precioFinal%></p>
-              <% } else { %>
-                <p class='information font' style='font-size: 20px; ;'>$<%= productos[i].precio %></p>
-              <% } %>
+      <div class='seccion-box'>
+        <% for( let i=0; i < productos.length; i++ ) { %>
+          <div class='product-box'>
+            <a href='/products/productDetail/<%= productos[i].id %>'>
+              <img src='/images/products/<%= productos[i].imagen %>' class='product-image' alt='Product'>
+            </a>
+
+            <div class='product-information'>
+              <p class='information font'>
+                <%= productos[i].nombre %>
+              </p>
+              <div class='price-box flex'>
+                <% if (productos[i].descuento !=0) { %>
+                  <p class='information font inicial-price'>$<%= productos[i].precio %>
+                  </p>
+                  <p class='information font discount'>
+                    <%= productos[i].descuento %>%
+                  </p>
+                  <% let precioFinal=productos[i].precio - ((productos[i].precio * productos[i].descuento)/ 100); %>
+                    <p class='information font final-price'>$<%=precioFinal%>
+                    </p>
+                    <% } else { %>
+                      <p class='information font' style='font-size: 20px; ;'>$<%= productos[i].precio %>
+                      </p>
+                      <% } %>
+              </div>
+              <div class='box-1'>
+                <select name='size' class='size-selector font'>
+                  <option disabled selected>Talle</option>
+                  <option>
+                    <%= productos[i].talle%>
+                  </option>
+                </select>
+                <select name='amount' class='amount-selector font'>
+                  <option disable selected>Cantidad</option>
+                  <% for( let i=0; i < 10; i++ ) { %>
+                    <option>
+                      <%=[i]%>
+                    </option>
+                    <% } %>
+                </select>
+                <a href='#'><img src='/images/web/carritomonstruitos.png' alt='Cart' class='cart cart-box'></a>
+              </div>
             </div>
-          <div class='box-1'>
-            <select name='size' class='size-selector font'>
-              <option disabled selected>Talle</option>
-              <option><%= productos[i].talle%></option>
-            </select>
-            <select name='amount' class='amount-selector font'>
-              <option disable selected>Cantidad</option>
-              <% for( let i=0; i < 10; i++ ) { %>
-                <option><%=[i]%></option>
-              <% } %>
-            </select>
-            <a href='#'><img src='/images/web/carritomonstruitos.png' alt='Cart' class='cart cart-box'></a>
           </div>
-        </div>
+          <% } %>
       </div>
-      <% } %>
-    </div>
-  </main>
+    </main>
   <%- include('../partials/footer.ejs')%>
 </body>
+
 </html>

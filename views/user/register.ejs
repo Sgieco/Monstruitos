@@ -12,57 +12,70 @@
         <div class='info-conteiner font'>
             <h1 class='title'>CREÁ TU CUENTA</h1>
 
-            <form action='/user/register/' method='POST' class='register-form'>
+            <form action='/user/register/' method='POST' class='register-form' enctype='multipart/form-data'>
+
                 <div class='complete-container'>
                     <p>Nombre y Apellido (*)</p>
                     <input type='text' name='nombre'>
                 </div>
+
                 <div class='complete-container'>
                     <p>Cómo te gustaría que te llamemos?</p>
                     <input type='text' name='apodo'>
                 </div>
+
                 <div class='complete-container'>
                     <p>Foto de Perfil</p>
                     <input type='file' name='avatar' class='foto-input'>
                 </div>
+
                 <div class='complete-container'>
                     <p>Email(*)</p>
-                    <input type='email' name='email'>
+                    <input type='email' name='email' value='<%= locals.oldData ? oldData.email : null %>'>
+                    <% if (locals.errors &&  errors.email){ %>
+                            
+                        <p style="color: #DC7633 ;"> <%= errors.email.msg %> </p>
+                       
+                    <% } %>
                 </div>
+
                 <div class='complete-container'>
                     <p>Teléfono</p>
                     <input type='number' name='telefono'>
                 </div>
+
                 <div class='complete-container'>
                     <p>Provincia</p>
-                    <select name='provincia'>
-                        <option selected>Seleccioná tu provincia
-                        <% for( let i=0; i < listado.length; i++ ) { %>
-                            <option>
-                                <%= listado[i].nombre %>
-                            </option>
-                            <% } %>
-                        </option>
+                    <select name='provincia' id='provincia'>
+                        <option class='option' value="Elige tu provincia">Elige tu Provincia</option>
                     </select>
                 </div>
+
                 <div class='complete-container'>
                     <p>Localidad</p>
-                    <select name='localidad'>
-                        <option selected>Seleccioná tu Localidad</option>
+                    <select name='localidad' id='localidad'>
+                        <option value="Elige tu localidad">Elige tu Localidad</option>
                     </select>
                 </div>
+
                 <div class='complete-container'>
                     <p>Dirección (*)</p>
-                    <input type='text' name='direccion'>
+                    <div style='display: flex;'>
+                        <input id='direccion' type='text' name='calle' placeholder='Calle' style="width: 31.5vw; font-family: 'Magra', sans-serif;" class='<%= locals.errors && errors.localidad ? "is-invalid" : null %>'> <input type='text' name='numero' placeholder='Número' style="width: 12vw; margin-left: 3vw;font-family: 'Magra', sans-serif;" class='<%= locals.errors && errors.localidad ? "is-invalid" : null %>'>
+                    </div>
+                    <input type='text' name='departamento' placeholder='Piso y Departamento' style="font-family: 'Magra', sans-serif;width: 46.5vw">
                 </div>
+
                 <div class='complete-container'>
                     <p>Contraseña (*)</p>
                     <input type='password' name='contraseña'>
                 </div>
+
                 <div class='complete-container'>
                     <p>Confirmar Contraseña (*)</p>
                     <input type='password' name='contraseñacheck'>
                 </div>
+                
                 <div class='button-box'>
                     <button type='submit' class='create-button'>CONFIRMA TU CUENTA</button>
                 </div>
@@ -72,7 +85,7 @@
     </main>
 
     <%- include('../partials/footer.ejs') %>
-
+    <script src='/js/user/registerForm.js'></script>
 </body>
 
 </html>
