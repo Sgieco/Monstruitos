@@ -15,19 +15,30 @@
                         <button type='submit' class='icon-search'><i class='fas fa-search'></i></button>
                     </div>
                 </form>
+
                 <dialog id='popup-login' class='style-login'>
                     <%- include('./login.ejs')%>
                 </dialog>
-                <div class='menu-header'>
-                    <a href='#'><img src='/images/web/contactomonstruitos.png' class='contact'></a>
-                    <a href='/products/cart'><img src='/images/web/carritomonstruitos.png' class='cart'></a>
-                    <button class='button-config' id='open-login'><i class='fas fa-user-alt user'></i></a></button>
-                    <a href='/user/register'><i class='fas fa-user-plus new-user'></i></a>
-                </div>
 
+                <% if (locals.isLogged) { %>
+                    <div class='menu-header'>
+                        <a href='#'><img src='/images/web/contactomonstruitos.png' class='contact'></a>
+                        <a href='/products/cart'><img src='/images/web/carritomonstruitos.png' class='cart'></a>
+                        <a href='/user/profile/<%=locals.userLogged.id%>'><img src='/images/users/<%= locals.userLogged.imagen %>' style='border-radius: 5px ;' class='button-config user'></a>
+                        <a href='/user/logout/'><i class='fas fa-sign-out-alt new-user'></i></a>
+                    </div>
+                <% } else { %>
+                    <div class='menu-header'>
+                        <a href='#'><img src='/images/web/contactomonstruitos.png' class='contact'></a>
+                        <a href='/products/cart'><img src='/images/web/carritomonstruitos.png' class='cart'></a>
+                        <button class='button-config' id='open-login'><i class='fas fa-user-alt user'></i></a></button>
+                        <a href='/user/register'><i class='fas fa-user-plus new-user'></i></a>
+                    </div>
+                <% } %>
             </div>
 
             <div class='option-list' id='list'>
+
                 <select name='bebes' class='select-header font'>
                     <option disabled selected>BEBES</option>
                     <option value='1'>Remeras</option>
@@ -36,6 +47,7 @@
                     <option value='4'>Camperas</option>
                     <option value='5'>Pantalones y Leggings</option>
                 </select>
+
                 <select name='nenes' class='select-header font'>
                     <option disabled selected>NENES</option>
                     <option value='1'>Remeras</option>
@@ -44,6 +56,7 @@
                     <option value='4'>Camperas</option>
                     <option value='5'>Pantalones y Leggings</option>
                 </select>
+
                 <select name='nenas' class='select-header font'>
                     <option disabled selected>NENAS</option>
                     <option value='1'>Remeras</option>
@@ -52,9 +65,11 @@
                     <option value='4'>Camperas</option>
                     <option value='5'>Pantalones y Leggings</option>
                 </select>
+
                 <a href='/sale' style='text-decoration: none;'>
                     <li class='select-header font'>OFERTAS</li>
                 </a>
+
                 <a href='/products/all' style='text-decoration: none;'>
                     <li class='select-header font'>VER TODO</li>
                 </a>
@@ -66,5 +81,14 @@
 
         </div>
     </div>
+    <% if (locals.isLoggedAdm) { %>
+        <div style='display: flex ; background-color: #48C9B0; justify-content: center'>
+            <h2 style='background-color:#48C9B0; color: #FAD7A0; border: none; margin-top: 5px'>MODO ADMINISTRADOR</h2>
+            <div style='display: flex; width: 2vw;'>
+                <a href='/products/newProduct' style='text-decoration: none; color: #FAD7A0;;margin-top: 12px;'><p style='font-size: 18px; font-family: "Magra", sans-serif; width: 15vw; margin-left: 19.5vw'>Cargar Producto</p></a>
+                <a href='/admin/logout/' class='new-user'><i class='fas fa-sign-out-alt' style='color: #FAD7A0; margin-top: 5px;'></i></a>
+            </div>
+        </div>
+    <% } %>
     <script src='/js/main/header.js'></script>
 </header>

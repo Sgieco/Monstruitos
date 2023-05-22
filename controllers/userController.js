@@ -15,7 +15,7 @@ const userController = {
        
     },
 
-    registerProcess: (req,res) => {
+    registerProcess: async (req,res) => {
 
         const resultValidation = validationResult(req);
 
@@ -28,7 +28,7 @@ const userController = {
 
         };
 
-        let userInDB = db.Usuario.findOne({
+        let userInDB = await db.Usuario.findOne({
             where: {
                 email: req.body.email
             }

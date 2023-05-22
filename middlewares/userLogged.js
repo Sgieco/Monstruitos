@@ -5,16 +5,16 @@ function userLogged(req, res, next) {
 
 	res.locals.isLogged = false;
 
-	let emailInCookie = req.cookies.userEmail;
-	let userFromCookie = db.Usuario.findOne({
-	    where: {
-			email: emailInCookie || null
-		}
-	})
+	// let emailInCookie = req.cookies.userEmail;
+	// let userFromCookie = db.Usuario.findOne({
+	//     where: {
+	// 		email: emailInCookie || null
+	// 	}
+	// })
 
-	if (userFromCookie) {
-		req.session.userLogged = userFromCookie;
-	}
+	// if (userFromCookie) {
+	// 	req.session.userLogged = userFromCookie;
+	// }
 
 	if (req.session.userLogged) {
 		res.locals.isLogged = true;
