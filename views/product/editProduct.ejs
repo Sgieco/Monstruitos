@@ -10,12 +10,25 @@
         <main class='edit-main font'>
             <h2 class='edit-title'>EDITAR PRODUCTO</h2>
 
+            <div class='errores'>
+                <ul> 
+                   
+                </ul>
+            </div>
+
             <form action='/products/editProduct/<%=producto.id%>/?_method=PUT' method='POST' class='edit-form'>
+
                 <div class='edit-space'>
-                    <input type='text' name='nombre' placeholder='Nombre del Producto' value='<%= producto.nombre %>'>
+                    <input type='text' name='nombre' placeholder='Nombre del Producto' value='<%= producto.nombre %>' id='nombre'>
+                    <% if (locals.errors &&  errors.nombre){ %>
+                            
+                        <p style="color: #1A5276 ; font-family: Magra;"> <%= errors.nombre.msg %> </p>
+                       
+                    <% } %>
                 </div>
+
                 <div class='edit-space'>
-                    <select name='categoria'>
+                    <select name='categoria' id='categoria'>
                         <option disabled selected>Categoria Principal</option>
                             <% for( let i=0; i < categorias.length; i++ ) { %>
                                 <% if (categorias[i].id===producto.categoria_id) { %>
@@ -29,9 +42,15 @@
                                 <% } %>
                             <% } %>
                     </select>
+                    <% if (locals.errors &&  errors.categoria){ %>
+                            
+                        <p style="color: #1A5276 ; font-family: Magra;"> <%= errors.categoria.msg %> </p>
+                       
+                    <% } %>
                 </div>
+
                 <div class='edit-space'>
-                    <select name='subcategoria'>
+                    <select name='subcategoria' id='subcategoria'>
                         <option disabled selected>Categoria Secundaria</option>
                             <% for( let i = 0; i < subcategorias.length; i++ ) { %>
                                 <% if (subcategorias[i].id === producto.subcategoria_id) { %>
@@ -45,16 +64,29 @@
                                 <% } %>
                             <% } %>
                     </select>
+                    <% if (locals.errors &&  errors.subcategoria){ %>
+                            
+                        <p style="color: #1A5276 ; font-family: Magra;"> <%= errors.subcategoria.msg %> </p>
+                       
+                    <% } %>
                 </div>
+
                 <div class='edit-space'>
                     <p>Foto del Producto</p>
-                    <input type='file' name='foto' multiple>
+                    <input type='file' name='foto' multiple id='foto'>
                 </div>
+
                 <div class='edit-space'>
-                    <input type='number' name='precio' placeholder='Precio' value='<%= producto.precio %>'>
+                    <input type='number' name='precio' placeholder='Precio' value='<%= producto.precio %>' id='precio'>
+                    <% if (locals.errors &&  errors.precio){ %>
+                            
+                        <p style="color: #1A5276 ; font-family: Magra;"> <%= errors.precio.msg %> </p>
+                       
+                    <% } %>
                 </div>
+
                 <div class='edit-space'>
-                    <select name='seccion'>
+                    <select name='seccion' id='seccion'>
                         <option disabled selected>Sección</option>
                         <% for( let i = 0; i < secciones.length; i++ ) { %>
                             <% if (secciones[i].id === producto.seccion_id) { %>
@@ -68,33 +100,75 @@
                             <% } %>
                         <% } %>
                     </select>
+                    <% if (locals.errors &&  errors.seccion){ %>
+                            
+                        <p style="color: #1A5276 ; font-family: Magra;"> <%= errors.seccion.msg %> </p>
+                       
+                    <% } %>
                 </div>
+
                 <div class='edit-space'>
                     <input type='number' name='descuento' placeholder='Porcentaje de Descuento' value='<%= producto.descuento %>'>
                 </div>
+
                 <div class='edit-space'>
-                    <input type='text' name='talles' placeholder='Talles disponibles de la prenda' value='<%= producto.talle %>'>
+                    <input type='text' name='talles' placeholder='Talles disponibles de la prenda' value='<%= producto.talle %>' id='talles'>
+                    <% if (locals.errors &&  errors.talles){ %>
+                            
+                        <p style="color: #1A5276 ; font-family: Magra;"> <%= errors.talles.msg %> </p>
+                       
+                    <% } %>
                 </div>
+
                 <div class='edit-space'>
-                    <input type='text' name='colores' placeholder='Colores disponibles de la prenda'value='<%= producto.color %>'>
+                    <input type='text' name='colores' placeholder='Colores disponibles de la prenda'value='<%= producto.color %>' id='colores'>
+                    <% if (locals.errors &&  errors.colores){ %>
+                            
+                        <p style="color: #1A5276 ; font-family: Magra;"> <%= errors.colores.msg %> </p>
+                       
+                    <% } %>
                 </div>
+                
                 <div class='edit-space'>
-                    <input type='text' name='descripcion' placeholder='Descripcion de la prenda' value='<%= producto.descripcion %>'>
+                    <input type='text' name='descripcion' placeholder='Descripcion de la prenda' value='<%= producto.descripcion %>' id='descripcion'>
+                    <% if (locals.errors &&  errors.descripcion){ %>
+                            
+                        <p style="color: #1A5276 ; font-family: Magra;"> <%= errors.descripcion.msg %> </p>
+                       
+                    <% } %>
                 </div>
+
                 <div class='edit-space'>
                     <p>Medidas para Envío</p>
                     <div class='edit-space-m'>
-                        <input type='number' name='ancho' placeholder='Ancho (cm)' value='<%= producto.ancho %>'>
-                        <input type='number' name='largo' placeholder='Largo (cm)' value='<%= producto.largo %>'>
-                        <input type='number' name='alto' placeholder='Alto (cm)' value='<%= producto.alto %>'>
+                        <input type='number' name='ancho' placeholder='Ancho (cm)' value='<%= producto.ancho %>' id='ancho'>
+                        <% if (locals.errors &&  errors.ancho){ %>
+                            
+                            <p style="color: #1A5276 ; font-family: Magra;"> <%= errors.ancho.msg %> </p>
+                           
+                        <% } %>
+                        <input type='number' name='largo' placeholder='Largo (cm)' value='<%= producto.largo %>' id='largo'>
+                        <% if (locals.errors &&  errors.largo){ %>
+                            
+                            <p style="color: #1A5276 ; font-family: Magra;"> <%= errors.largo.msg %> </p>
+                           
+                        <% } %>
+                        <input type='number' name='alto' placeholder='Alto (cm)' value='<%= producto.alto %>' id='alto'>
+                        <% if (locals.errors &&  errors.alto){ %>
+                            
+                            <p style="color: #1A5276 ; font-family: Magra;"> <%= errors.alto.msg %> </p>
+                           
+                        <% } %>
                     </div>
                 </div>
+
                 <div class='center-button'>
                     <button type='submit' class='save-changes'>Guardar Cambios</button>
                 </div>
             </form>
         </main>
-        <%- include('../partials/footer.ejs')%>
+    <%- include('../partials/footer.ejs')%>
+    <script src='/js/product/editProductValidation.js'></script>
 </body>
 
 </html>

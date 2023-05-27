@@ -28,8 +28,6 @@
     border: solid 2px #ebebeb;
 }
 
-
-
 .complete-container select{
     border: solid 2px #ebebeb;
     width: 80%;
@@ -53,6 +51,10 @@
 .button-box{
     text-align: center;
     margin: 0.5rem;
+}
+
+.is-invalid{
+    border: #DC7633 1px solid;
 }
 
 @media(min-width: 768px){

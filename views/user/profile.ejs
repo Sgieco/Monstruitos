@@ -9,28 +9,31 @@
     <%- include('../partials/header.ejs')%>
     <main class='profile-main font'>
 
-        <h3>Bienvenido a Tu Perfil (apodo)</h3>
+        <h3>Bienvenido a Tu Perfil <%=user.apodo %></h3>
         <div class='data-box'>
             <div class='box1'>
-                <img src='/images/users/fotoperfil.png' alt="Foto de Perfil" class='profile-image'>
+                <img src='/images/users/<%= user.imagen %>' alt="Foto de Perfil" class='profile-image'>
             </div>
 
             <div class='box2'>
                 <h6>Tus datos:</h6>
-                <p>Nombre:</p>
-                <p>Email:</p>
-                <p>Teléfono:</p>
+                <p>Nombre: <%=user.nombreyapellido %></p>
+                <p>Email: <%=user.email%></p>
+                <p>Teléfono: <%=user.telefono%></p>
 
                 <h6>Datos de Envío:</h6>
-                <p>Provincia:</p>
-                <p>Localidad:</p>
-                <p>Dirección:</p>
+                <p>Provincia: <%=user.provincia%></p>
+                <p>Localidad: <%=user.localidad%></p>
+                <p>Dirección: <%= user.calle + ' ' + user.numero + ' ' + user.departamento%></p>
             </div>
         </div>
 
         <div class='tools'>
-            <a href='/user/editProfile' class='edit'>Editar Datos</a>
-            <button class='delete'>Eliminar Perfil</button>
+            <a href='/user/editProfile/<%=user.id%>' class='edit'>Editar Datos</a>
+
+            <form action='/user/editProfile/delete/<%=user.id%>/?_method=DELETE' method='POST'>
+                <button type='submit' class='delete'>Eliminar Perfil</button>
+            </form>
         </div>
 
         <div class='box3'>

@@ -141,6 +141,20 @@
     margin: 0 45vw;
 }
 
+.is-invalid{
+    border: solid 1px #1A5276;
+}
+
+.is-valid{
+    border: solid 1px #85C1E9 ;
+}
+
+div.errores{
+    color: #065b91;
+    padding: 2vw;
+    font-family: 'Magra', sans-serif;
+}
+
 /*MAIN*/
 
 .general-main{

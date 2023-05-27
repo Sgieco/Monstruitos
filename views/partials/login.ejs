@@ -1,37 +1,68 @@
-<main>
-    <div class='font'>
-        <button class='style-close' id='close-login'><i class="fas fa-times"></i></button>
-        <div class='flex-content'>
-            <a href='/'><img src='/images/web/logosinfondo.png' class='login-logo'></a>
-            <p class='start-mesagge'>Inicia Sesion</p>
-        </div>
-
-        <form action='/user/login/' method='POST' class='form'>
-            <div class='complete-box'>
-                <p>Email</p>
-                <input type='email' name='email' id='email'>
+<head>
+    <%- include('./head.ejs')%>
+</head>
+<body>
+    <main>
+        <div class='font'>
+            <button class='style-close' id='close-login'><i class="fas fa-times"></i></button>
+            <div class='flex-content'>
+                <a href='/'><img src='/images/web/logosinfondo.png' class='login-logo'></a>
+                <p class='start-mesagge'>Inicia Sesion</p>
             </div>
-            <br>
-            <div class='complete-box'>
-                <p>Contraseña</p>
-                <input type='password' name='password' id='password'>
+    
+            <div class='errores'>
+                <ul> 
+                   
+                </ul>
             </div>
-            <a href='#' class='text-decoration'>
-                <p class='password-forgot'>¿Olvidaste tu contraseña?</p>
-            </a>
-            <div class='remember-box'>
-                <input type='checkbox' name='remember-user'>
-                <p class='remember-text'>Recordar mi Usuario</p>
-            </div>
-            <div class='button'>
-                <button type='submit' class='checkin-button'>INGRESAR</button>
-            </div>
-            <div class='create-box'>
-                <p>¿Todavia no tenes tu cuenta?</p><a href='/user/register'>
-                    <p>Registrate!</p>
+    
+            <form action='/user/login/' method='POST' class='form' id='login-form'>
+    
+                <div class='complete-box'>
+                    <p>Email</p>
+                    <input type='email' name='email' id='email' value='<%= locals.oldData ? oldData.email : null %>'>
+                    <% if (locals.errors &&  errors.email){ %>
+                                
+                        <p style="color: #A04000 ;"> <%= errors.email.msg %> </p>
+                       
+                    <% } %>
+                </div>
+    
+                <br>
+    
+                <div class='complete-box'>
+                    <p>Contraseña</p>
+                    <input type='password' name='password' id='password'>
+                    <% if (locals.errors &&  errors.password){ %>
+                                
+                        <p style="color: #A04000 ;"> <%= errors.password.msg %> </p>
+                       
+                    <% } %>
+                </div>
+    
+                <a href='#' class='text-decoration'>
+                    <p class='password-forgot'>¿Olvidaste tu contraseña?</p>
                 </a>
-            </div>
-        </form>
+    
+                <div class='remember-box'>
+                    <input type='checkbox' name='rememberme'>
+                    <p class='remember-text'>Recordar mi Usuario</p>
+                </div>
+    
+                <div class='button'>
+                    <button type='submit' class='checkin-button'>INGRESAR</button>
+                </div>
+                
+                <div class='create-box'>
+                    <p>¿Todavia no tenes tu cuenta?</p><a href='/user/register'>
+                        <p>Registrate!</p>
+                    </a>
+                </div>
+            </form>
+    
+        </div>
+    
+    </main>
+    <script src='js/user/loginValidation.js'></script>
 
-    </div>
-</main>
+</body>

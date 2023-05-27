@@ -9,6 +9,16 @@
   <%- include('../partials/header.ejs')%>
     <main class='general-main'>
 
+      <% if (locals.isLoggedAdm) { %>
+        <div style='display: flex ; background-color: #48C9B0; justify-content: center; height: 2.5rem'>
+          <h2 style='background-color:#48C9B0; color: #FAD7A0; border: none; font-family:"Marga"sans-serif;'>MODO ADMINISTRADOR</h2>
+          <div style='display: flex; width: 10rem;'>
+            <a href='/products/newProduct' style='text-decoration: none; color: #FAD7A0;;margin-top: 8px;'><p style='font-size: 18px; font-family: "Magra", sans-serif; width: 15vw; margin-left: 19.5vw'>Cargar Producto</p></a>
+            <a href='/admin/logout/'><i class='fas fa-sign-out-alt' style='color: #FAD7A0; font-size: 1.5rem; margin-top: 9px;'></i></a>
+          </div>
+        </div>
+      <% } %>
+
       <!-- CARRUSEL DE SLIDERS-->
       <div id='carouselExample' class='carousel slide'>
         <div class='carousel-inner'>

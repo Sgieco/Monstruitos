@@ -46,7 +46,7 @@ h3{
     font-size: 12px;
     background-color: #F5CBA7;
     border: none;
-    padding: 0.65rem;
+    padding: 0.65rem 0.75rem;
     border-radius: 5px;
     color: black;
     text-align: center;
@@ -67,7 +67,9 @@ h3{
 }
 
 .tools{
-    text-align: center;
+    position: absolute;
+    top: 21rem;
+    left: 3.5rem;
 }
 
 .box3{
@@ -130,12 +132,16 @@ h3{
 
     .tools{
         position: absolute;
-        left: 21.5rem;
-        bottom: 7rem;
+        left: 36.5rem;
+        top: 19rem;
     }
 
     .edit, .delete{
         font-size: 14px;
+    }
+
+    .edit{
+        padding: 0.65rem 0.85rem;
     }
 
     .box3{
@@ -166,17 +172,23 @@ h3{
     }
 
     .tools{
-        left: 31.5rem;
-        bottom: 3rem;
+        display: flex;
+        left: 8.5rem;
+        top: 30rem;
     }
 
     .edit, .delete{
         font-size: 16px;
     }
+
+    .edit{
+        padding: 0.55rem;
+    }
     
     .box3{
         width: 80%;
         margin: auto;
+        margin-top: 1rem;
     }
 }
 
@@ -208,9 +220,14 @@ h3{
     }
 
     .tools{
+        display: flex;
         position: absolute;
-        left: 52.5rem;
-        bottom: 5rem;
+        left: 28rem;
+        top: 32rem;
+    }
+
+    .edit{
+        padding: 0.55rem;
     }
 
     .box3{

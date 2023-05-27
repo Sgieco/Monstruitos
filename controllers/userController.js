@@ -1,10 +1,14 @@
-const { response } = require('express');
+const path = require('path');
+
 const fetch = require ('node-fetch'); //PARA CONSUMIR APIS EXTERNAS
 
 const db = require('../database/models');//PARA ACCEDER A NUESTRAS TABLAS DB
-const bcryptjs = require('bcryptjs');//PARA ENCRIPTAR PASS
 
 const { validationResult } = require('express-validator');
+
+const bcryptjs = require('bcryptjs');//PARA ENCRIPTAR PASS
+
+let Op = db.Sequelize.Op;
 
 
 const userController = {
@@ -15,7 +19,7 @@ const userController = {
        
     },
 
-    registerProcess: async (req,res) => {
+    registerProcess: async (req, res) => {
 
         const resultValidation = validationResult(req);
 
@@ -25,7 +29,6 @@ const userController = {
                 oldData: req.body,
 
             })
-
         };
 
         let userInDB = await db.Usuario.findOne({
@@ -36,11 +39,11 @@ const userController = {
 
         if (userInDB) {
             return res.render('register', {
-                errors: { email: { msg: 'Este mail ya esta registrado, podés iniciar sesión directamente'} },
+                errors: { email: { msg: 'Este mail ya esta registrado, podés iniciar sesión directamente' } },
                 oldData: req.body
 
             })
-        }
+        } 
 
         db.Usuario.create({
             nombreyapellido: req.body.nombre,
@@ -52,7 +55,7 @@ const userController = {
             calle: req.body.calle,
             numero: req.body.numero,
             departamento: req.body.departamento,
-            contraseña: bcryptjs.hashSync(req.body.contraseña, 10),
+            contraseña: bcryptjs.hashSync(req.body.password, 10),
             imagen: req.file.filename
         })
 
@@ -73,7 +76,7 @@ const userController = {
                 delete userToLogin.contraseña;
                 req.session.userLogged = userToLogin;
 
-                if(req.body.remember-user){
+                if(req.body.rememberme){
                     res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 30 })
                 }
 
@@ -88,17 +91,25 @@ const userController = {
                 }
             })
         }
+
+        return res.render('home', {
+            errors: {
+                email: {
+                    msg: 'El email mencionado es incorrecto'
+                }
+            }
+        });
     },
 
     userProfile: (req, res) => {
-        return res.render('userProfile', {
+        return res.render('profile', {
             user: req.session.userLogged
         })
     },
 
     editProfile: (req,res) => {
         let user = req.session.userLogged;
-        res.render('userProfileEdit', { user: user })
+        res.render('editProfile', { user: user })
     },
 
     changeProfile: async(req, res) =>{

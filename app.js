@@ -1,15 +1,15 @@
 //PARA USO DEL FRAMEWORK
 const express = require('express');
-const app = express();
-
 //PARA USO DE SESSION Y COOKIES
 const session = require('express-session'); 
-const cookies = require("cookie-parser");
+const cookies = require('cookie-parser');
+
+const app = express();
 
 const path = require ('path');
 
-const dotenv = require('dotenv').config();
-const methodOverride = require("method-override");
+const dotenv = require('dotenv').config()
+const methodOverride = require('method-override');
 
 //IMPORTAMOS MIDDLEWARE
 const userLogged = require('./middlewares/userLogged');
@@ -27,11 +27,11 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 //PARA EL USO DE METODOS PUT Y DELETE
-app.use(methodOverride ("_method")); 
+app.use(methodOverride ('_method')); 
 
 //IMPLEMENTAMOS SESSION COMO MIDDLEWARE A NIVEL APP
 app.use(session({
-    secret: "Secret Message",
+    secret: 'Secret Message',
     resave: false,
     saveUninitialized: false
 }));
@@ -48,6 +48,7 @@ app.set('views', [
     path.join(__dirname, './views/main'),
     path.join(__dirname, './views/user'),
     path.join(__dirname, './views/product'), 
+    path.join(__dirname, './views/partials')
 ]);
 
 //RECURSOS ESTATICOS

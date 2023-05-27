@@ -7,21 +7,42 @@
                 <p class='start'>Inicia Sesion</p>  
             </div>
             
-            <form action='/admin/login/' method='POST' class='form'>
+            <div class='errores'>
+                <ul> 
+                   
+                </ul>
+            </div>
+
+            <form action='/admin/login/' method='POST' class='form' id='adminLogin'>
+
                 <div class='complete-box'>
                     <p>Email</p>
-                    <input type='email' name='email' id='email'>
+                    <input type='email' name='emailadmin' id='emailAdmin'>
+                    <% if (locals.errors &&  errors.emailadmin){ %>
+                            
+                        <p style="color: #2980B9 ;"> <%= errors.emailadmin.msg %> </p>
+                       
+                    <% } %>
                 </div>
+
                 <br>
+
                 <div class='complete-box'>
                     <p>Contraseña</p>
-                    <input type='password' name='password' id='password'>
+                    <input type='password' name='passwordadmin' id='passwordAdmin'>
+                    <% if (locals.errors &&  errors.passwordadmin){ %>
+                            
+                        <p style="color: #2980B9 ;"> <%= errors.passwordadmin.msg %> </p>
+                       
+                    <% } %>
                 </div>
+
                 <a href='#' class='text-decoration'><p class='password-forgot'>¿Olvidaste tu contraseña?</p></a>
                 <div class='remember-box'>
-                    <input type='checkbox' name='remember-user'>
+                    <input type='checkbox' name='rememberadm'>
                     <p class='remember-text'>Recordar mi Usuario</p>
                 </div>
+
                 <div class='button'>
                     <button type='submit' class='checkin-buttonAdmin'>INGRESAR</button>
                 </div> 
@@ -29,5 +50,5 @@
 
         </div>
     </main>
+    <script src='js/admin/loginAdmValidation.js'></script>
 </body>
-</html>

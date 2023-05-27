@@ -1,5 +1,11 @@
 const db = require('../database/models');
 
+const sequelize = db.sequelize;
+const { Op } = require('sequelize');
+
+const {validationResult} = require('express-validator');
+
+
 const productController = {
 
     newProduct: (req, res) => {
@@ -7,6 +13,17 @@ const productController = {
     },
 
     create: (req, res) => {
+
+        const resultValidation = validationResult(req);
+
+        if(resultValidation.errors.length > 0) {
+
+            return res.render('newProduct', {
+                errors: resultValidation.mapped(), 
+                oldData: req.body
+            })
+        }
+
         db.Product.create({
             nombre: req.body.nombre,
             categoria_id: req.body.categoria,
@@ -23,7 +40,7 @@ const productController = {
             imagen: req.file.filename
         })
 
-        res.redirect("/products/all")
+        res.redirect('/products/all')
 
     },
 
@@ -38,7 +55,7 @@ const productController = {
 
         Promise.all([pedidoProducto, pedidoCategorias, pedidoSubcategorias, pedidoSeccion])
             .then(function ([producto, categorias, subcategorias, secciones]) {
-                res.render("editProduct", {
+                res.render('editProduct', {
                     producto: producto,
                     categorias: categorias,
                     subcategorias: subcategorias,
@@ -78,7 +95,7 @@ const productController = {
             }
         })
 
-        res.redirect("/");
+        res.redirect('/');
 
     },
 
@@ -89,7 +106,7 @@ const productController = {
             }
         })
 
-        res.redirect("/")
+        res.redirect('/')
 
     },
 

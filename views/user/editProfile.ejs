@@ -11,52 +11,60 @@
         <div class='info-conteiner font'>
             <h1 class='title'>EDITÁ TUS DATOS</h1>
 
-            <form action='/user/register/' method='POST' class='register-form'>
+            <form action='/user/editProfile/<%= userLogged.id%>/?_method=PUT' method='POST' class='register-form'>
+
                 <div class='complete-container'>
                     <p>Nombre y Apellido (*)</p>
-                    <input type='text' name='nombre'>
+                    <input type='text' name='nombre' value='<%= userLogged.nombreyapellido %>'>
                 </div>
+
                 <div class='complete-container'>
                     <p>Cómo te gustaría que te llamemos?</p>
-                    <input type='text' name='apodo'>
+                    <input type='text' name='apodo' value='<%= userLogged.apodo %>'>
                 </div>
+
                 <div class='complete-container'>
                     <p>Email(*)</p>
-                    <input type='email' name='email'>
+                    <input type='email' name='email' value='<%= userLogged.email %>'>
                 </div>
+
                 <div class='complete-container'>
                     <p>Teléfono</p>
-                    <input type='number' name='telefono'>
+                    <input type='number' name='telefono' value='<%= userLogged.telefono %>'>
                 </div>
+
                 <div class='complete-container'>
                     <p>Provincia</p>
-                    <select name='provincia'>
-                         <option selected>Seleccioná tu opción</option>
-                        <% for( let i=0; i < listado.length; i++ ) { %>
-                            <option>
-                                <%= listado[i].nombre %>
-                            </option>
-                            <% } %>
+                    <select name='provincia' id='provincia'>
+                        <option class='option' value="Elige tu provincia">Elige tu Provincia</option>
                     </select>
                 </div>
+
                 <div class='complete-container'>
                     <p>Localidad</p>
-                    <select name='localidad'>
-                        <option selected>Seleccioná tu opción</option>
+                    <select name='localidad' id='localidad'>
+                        <option value="Elige tu localidad">Elige tu Localidad</option>
                     </select>
                 </div>
+
                 <div class='complete-container'>
                     <p>Dirección (*)</p>
-                    <input type='text' name='direccion'>
+                    <div style='display: flex;'>
+                        <input id='direccion' type='text' name='calle' placeholder='Calle' style="width: 31.5vw; font-family: 'Magra', sans-serif;" value='<%= userLogged.calle %>'> <input type='text' name='numero' placeholder='Número' style="width: 12vw; margin-left: 3vw;font-family: 'Magra', sans-serif;" value='<%= userLogged.numero %>'>
+                    </div>
+                    <input type='text' name='departamento' value='<%= userLogged.departamento %>' placeholder='Piso y Departamento' style="font-family: 'Magra', sans-serif;width: 46.5vw">
                 </div>
+
                 <div class='button-box'>
                     <button type='submit' class='create-button'>GUARDAR CAMBIOS</button>
                 </div>
+                
             </form>
 
         </div>
     </main>
     <%- include('../partials/footer.ejs') %>
+    <script src='/js/user/registerForm.js'></script>
 </body>
 
 </html>

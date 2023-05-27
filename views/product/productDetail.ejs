@@ -6,7 +6,7 @@
 <body>
     <%- include('../partials/header.ejs')%>
     <main class='main-detail font'>
-
+        <% if (locals.isLoggedAdm) { %>
         <div class='admin-box'>
             <a href='/products/editProduct/<%= producto.id%>'>Editar Producto</a>
 
@@ -14,7 +14,8 @@
                 <button type='submit'>Eliminar Producto</button>
             </form>
         </div>
-
+        <% } %>
+        
         <p class='category'>Categoría Principal < Categoría Secundaria</p>
 
         <div class='detail-box'>

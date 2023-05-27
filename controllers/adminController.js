@@ -1,8 +1,6 @@
-const {validationResult} = require('express-validator');
-
 const administradorController ={
     
-    loginProcess:(req,res) =>{
+    loginAdmin:(req,res) =>{
         let amdUser = {
             email: 'administrador@gmail.com',
             password: 'Administrador1234'
@@ -10,21 +8,22 @@ const administradorController ={
 
         let admLogin = amdUser;
 
-        if(req.body.emailadm === admLogin.email){
-            let isOkThePassword = admLogin.password == req.body.passwordadm;
+       
+        if(req.body.emailadmin === admLogin.email){
+            let isOkThePassword = admLogin.password == req.body.passwordadmin;
 
             if(isOkThePassword){
                 delete admLogin.password;
                 req.session.admLogged = admLogin
 
                 if(req.body.rememberadm){
-                    res.cookie('admEmail', req.body.emailadm,{maxAge: (1000 * 60) * 30})
+                    res.cookie('admEmail', req.body.emailadmin,{maxAge: (1000 * 60) * 30})
                 }
 
-                return res.redirect('/')
+                return res.redirect('/products/newProduct')
             }
 
-            return res.render('loginAdministrador', {
+            return res.render('loginAdmin', {
                 errors: {
                     passwordadm: {
                         msg: 'Ups! Parece que la constraseña ingresada es incorrecta'
@@ -35,7 +34,7 @@ const administradorController ={
         }
 
         
-        return res.render('loginAdministrador', {
+        return res.render('loginAdmin', {
 			errors: {
 				emailadm: {
 					msg: 'El email mencionado es incorrecto'
